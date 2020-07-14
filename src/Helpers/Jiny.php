@@ -10,7 +10,7 @@ function session_start($db=null)
         new \Jiny\Session\File();
     }
     
-    session_start();
+    \session_start();
 }
 
 function session($key, $value=null)

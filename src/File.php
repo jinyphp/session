@@ -2,7 +2,7 @@
 
 namespace Jiny\Session;
 
-class Sessions implements Handler
+class File implements Handler
 {
     private $_path="./sessions";
     /**

@@ -2,7 +2,7 @@
 
 namespace Jiny\Session;
 
-class Sessions implements Handler
+class Database implements Handler
 {
     private $_db;
     /**
