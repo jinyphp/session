@@ -1,0 +1,34 @@
+{
+    "name": "jiny/session",
+    "description": "jinyPHP session",
+    "keywords": [
+        "jinyPHP",
+        "framwork",
+        "session"
+    ],
+    "homepage": "https://php.jiny.dev",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "hojinlee",
+            "email": "infohojin@gmail.com",
+            "homepage": "https://php.jiny.dev"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">= 7.0"
+        
+    },
+    "autoload": {
+        "psr-4": {
+            "Jiny\\Session\\": "src/"
+        },
+        "files": [
+            "src/Helpers/Helper.php",
+            "src/Helpers/Jiny.php"
+        ]        
+   
+    }
+}
