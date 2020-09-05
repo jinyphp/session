@@ -23,6 +23,8 @@ class File implements Handler
             array($this, 'destroy'),
             array($this, 'gc')
         );
+
+        
     }
 
 

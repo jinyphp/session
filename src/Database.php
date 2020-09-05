@@ -21,7 +21,8 @@ class Database implements Handler
                 array($this, 'destroy'),
                 array($this, 'gc')
             );
-        }         
+        }
+           
     }
 
     public function open($save_path, $session_name) {

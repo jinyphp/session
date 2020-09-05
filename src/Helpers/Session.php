@@ -1,21 +1,24 @@
 <?php
 
-namespace jiny;
+namespace jiny\session;
 
 function session_start($db=null)
 {
+    // 세션 동작설정
     if (\is_object($db)) {
         // 데이터 베이스 기반의 세션
-        new \Jiny\Session\Database($db);
+        $Sess = new \Jiny\Session\Database($db);
     } else if (\is_string($db)) {
         // 파일 기반의 세션
-        new \Jiny\Session\File($db);
+        $Sess = new \Jiny\Session\File($db);
+    } else {
+        // 기본 PHP 세션
+        $Sess = new \Jiny\Session\Session();
     }
-    // else PHP 기본 세션
-    
-    
-    // 세션 스타트
-    \session_start();
+
+    // 세션 객체 반환
+    \session_start(); // 세션 스타트
+    return $Sess;
 }
 
 function session($key, $value=null)
@@ -35,23 +38,5 @@ function session($key, $value=null)
         // 값을 읽어 옵니다.
         $_SESSION[$key] = $value;
         return true;
-    }
-}
-
-function cookie($key, $value=null, $time=3600)
-{
-    if ( $value !== null ) {
-        // 쿠키설정
-        setcookie($key, $value, time()+$time, "/");
-    } else {
-        // 쿠키읽기
-        if(isset($_COOKIE[$key])) return $_COOKIE[$key];
-    }
-}
-
-function cookieClears(...$args)
-{
-    foreach ($args as $name) {
-        \jiny\cookie($name, "", -3600);
     }
 }

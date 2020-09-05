@@ -27,7 +27,8 @@
         },
         "files": [
             "src/Helpers/Helper.php",
-            "src/Helpers/Jiny.php"
+            "src/Helpers/Jiny.php",
+            "src/Helpers/Session.php"
         ]        
    
     }
